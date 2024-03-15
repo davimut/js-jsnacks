@@ -31,7 +31,7 @@ if ( lista === '1')  {
          console.log(parola2.length)
          console.log(parola.length)
          if (parola.length > parola2.length) {
-         resultElement.innerText = (parolaì + parola2)
+         resultElement.innerText = (parola + parola2)
          console.log(parola + parola2) 
          }else if (parola2.length > parola.length) {
          console.log(parola2 + parola)
