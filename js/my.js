@@ -98,16 +98,22 @@ buttonVerification.addEventListener('click', function (event) {
        } if (!haIndovinato) {
         console.log("Hai perso! Il numero del computer era: " + numeroCasuale);
        }
-
+    
     } else if (lista === '7') {
         TitleElement.innerText = (' Scrivere un programma che stampi la tabellina del 2, fino al numero 1000. Modificate poi il programma in modo che venga chiesto all"utente il numero massimo consentito, e stampare tutta la tabellina del 2 fino al numero inserito. ')
-        
-        const numeri = []
-        for (let i = 0; i < numero; i++) {
-        let numero = parseInt(prompt("inserisci numero massimo fino a 1000"))
-        console.log(numero)
-        resultElement.innerText = numero
+         
+        let numero = parseInt(prompt("inserisci numero da 2 a 1000 "))
+        for (let i = 0; i < numero ; i++) {
+         num = i + 1
+         let multipliDue = num%2
+        if (numero <= 1000 && multipliDue === 0) {
+         console.log(num)
+         resultElement.innerText = num }
+        else { 
+         resultElement.innerText = 'inserisci un valore multiplo di 2 e inferiore a 1000'
         }
+        }
+         
 
     } else if (lista === '8') {
         TitleElement.innerText = ('Fate generare un numero random da 0 a 10 al computer, e chiedete all"utente di inserire un suo numero. Se il numero scelto dall"utente è uguale al numero del computer informate l"utente che ha vinto, altrimenti ha perso. A questo punto fate giocare l"utente, fintanto che non vince la partita contro il PC ')
