@@ -44,13 +44,14 @@ lista = listaInputElement.value
 
         TitleElement.innerText = (' Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti. ')
         n = 10
-        const numeri = []
+        let somma = 0 
+        console.log('ciso')
         for (i = 0; i < n; i++) {
-            let numero = parseInt(prompt("inserisci numero!"))
-            numeri.push(numero)
+          let numero = parseInt(prompt("inserisci numero!"))
+          somma = somma + numero    
         }
-        console.log(numeri)
-        resultElement.innerText = risultato = numeri[0] + numeri[1] + numeri[2] + numeri[3] + numeri[4] + numeri[5] + numeri[6] + numeri[7] + numeri[8] + numeri[9]
+        console.log(somma)
+        resultElement.innerText = somma
 
     } else if (lista === '4') {
 
@@ -90,15 +91,16 @@ lista = listaInputElement.value
             let numeroUtente = parseInt(prompt("Inserisci un numero da 0 a 10 (tentativi rimasti: " + tentativi + "):"));
             if (numeroUtente === numeroCasuale) {
                 console.log("Hai vinto! Il numero del computer era: " + numeroCasuale);
+              resultElement.innerText = ("Hai vinto! Il numero del computer era: " + numeroCasuale)
                 haIndovinato = true;
-            } else {
+            } else if (isNaN(numeroUtente)) {
+                resultElement.innerText = ('inserisci un numero valido per giocare')
+            break;
+            }else{
+                resultElement.innerText = ("Tentativo fallito.");
                 console.log("Tentativo fallito.");
-                tentativi--;
-            }
-            if (haIndovinato) {
-                console.log("Hai perso! Il numero del computer era: " + numeroCasuale);
-                break;
-            }
+                tentativi--;}
+            
         }
 
     } else if (lista === '7') {
@@ -128,24 +130,28 @@ lista = listaInputElement.value
                 console.log("Hai vinto! Il numero del computer era: " + numeroCasuale);
                 resultElement.innerText = ("Hai vinto! Il numero del computer era: " + numeroCasuale);
                 haIndovinato = true;
-            }
-            if (haIndovinato) {
+            } if (numeroUtente != numeroCasuale && isNaN(numeroUtente)) {
                 console.log("Hai perso! Il numero del computer era: " + numeroCasuale);
-                resultElement.innerText = ("Hai perso! Il numero del computer era: " + numeroCasuale)
-                break
-            }
+                resultElement.innerText = ("Hai perso! Il numero del computer era: " + numeroCasuale);
+                break;
+            }  
         }
 
     } else if (lista === '10') {
 
         TitleElement.innerText = (' Scrivere un programma a cui venga chiesto all utente di inserire numeri uno dopo l"altro. Quando l"utente scriverà 2 volte consecutive lo stesso numero allora il programma dovrà terminare.')
          risolto = false
-         //while (!risolto){
+         while (!risolto){
             let numero = parseInt(prompt('inserisci un numero non uguale a quell inseriti in precedenza!'))
-            if (numero === numero) { 
-            }
+            let numero2 = parseInt(prompt('inserisci un numero non uguale a quell inseriti in precedenza!'))
+            if (numero === numero2) {
+            risolto = true
+            console.log("sistem error hai inserito 2 numeri uguali " +  numero + numero2 );
+             resultElement.innerText = ("sistem error hai inserito 2 numeri uguali " +  numero  + ' e '+ numero2 );
+             break;
+            } 
         
-
+        }
         
     } else if (lista === '11') {
         TitleElement.innerText = (' Creare una funzione che stampa il cubo dei primi N numeri, dove N è un numero indicato dall’utente. Una volta creata la funzione chiedere allutente di inserire N con un prompt e richiamate la funzione per dare la risposta all"utente.')
