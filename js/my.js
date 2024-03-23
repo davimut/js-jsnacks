@@ -45,7 +45,6 @@ lista = listaInputElement.value
         TitleElement.innerText = (' Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti. ')
         n = 10
         let somma = 0 
-        console.log('ciso')
         for (i = 0; i < n; i++) {
           let numero = parseInt(prompt("inserisci numero!"))
           somma = somma + numero    
@@ -57,9 +56,9 @@ lista = listaInputElement.value
 
         TitleElement.innerText = ('In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli  se può partecipare o no alla festa. ')
         const nomiInvitati = ['Luca', 'Marco', 'Michele', 'Giovanni', 'Rosario']
-        let nome = (prompt("inserisci nome se sei nella lista degli invitati sarai il benvenuto!"))
+        let nome = (prompt("inserisci nome, se sei nella lista degli invitati sarai il benvenuto!"))
         if (nomiInvitati.includes(nome)) {
-            resultElement.innerText = 'Il tuo nome si trova nella lista degli invitati ' + nome + ' goditi la festa del grande Gatsby'
+            resultElement.innerText = 'Il tuo nome si trova nella lista degli invitati!  ' + nome + ' goditi la festa del grande Gatsby!'
         } else {
             resultElement.innerText = 'il tuo nome non compare nella lista degl invitati ci dispace!'
         }
@@ -155,8 +154,29 @@ lista = listaInputElement.value
         
     } else if (lista === '11') {
         TitleElement.innerText = (' Creare una funzione che stampa il cubo dei primi N numeri, dove N è un numero indicato dall’utente. Una volta creata la funzione chiedere allutente di inserire N con un prompt e richiamate la funzione per dare la risposta all"utente.')
+       
+    
+
     } else if (lista === '12') {
         TitleElement.innerText = (' Crea una funzione chiamata sommaNumeri che dato un array di 10 numeri definito da voi nel codice, ne calcoli la loro somma e la restituisca come risultato.Utilizzare la funzione sommaNumeri per stampare il risultato ottenuto.')
+       
+       numeri = [1,23,445,66,7,8,89,90,33,55]
+       console.log(numeri) 
+      
+
+       function sommaNumeri(array){
+         let somma = 0 
+        for (let i = 0 ; i < array.length ; i++){
+          let numero = array[i];
+          somma = somma + numero;         
+         }
+         console.log(somma)
+        }
+       
+      sommaNumeri(numeri)
+      
+       
+       
     } else if (lista === '13') {
         TitleElement.innerText = (' Crea una funzione chiamata mediaAritmetica che prende in input un array di 10 numeri e restituisca la media aritmetica dei numeri contenuti nell array.  Utilizzare la funzione sommaNumeri precedentemente creata per calcolare la media dei 10 numeri che vanno chiesti all utente attraverso dei prompt.')
     } else if (lista === '14') {
